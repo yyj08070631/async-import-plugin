@@ -8,7 +8,13 @@ module.exports = class AsyncImportPlugin {
           let regExp = /^\.\/.*$/;
           let recursive = true;
           let mode = "sync";
+          let chunkName
           switch (expr.arguments.length) {
+            case 5: {
+              const chunkNameExpr = parser.evaluateExpression(expr.arguments[4]);
+              if (!chunkNameExpr.isString()) return;
+              chunkName = chunkNameExpr.string;
+            }
             case 4: {
               const modeExpr = parser.evaluateExpression(expr.arguments[3]);
               if (!modeExpr.isString()) return;
@@ -36,7 +42,8 @@ module.exports = class AsyncImportPlugin {
                   recursive,
                   regExp,
                   mode,
-                  category: "commonjs"
+                  category: "commonjs",
+                  chunkName
                 },
                 expr.range
               );

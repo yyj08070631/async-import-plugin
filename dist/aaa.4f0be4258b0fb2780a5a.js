@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebpack_demo=self.webpackChunkwebpack_demo||[]).push([[139],{741:(e,d,s)=>{s.r(d),s.d(d,{default:()=>c});const c={words:"Im 1."}},260:(e,d,s)=>{s.r(d),s.d(d,{default:()=>c});const c={words:"Im 2."}},835:(e,d,s)=>{s.r(d),s.d(d,{default:()=>c});const c={words:"Im 3."}}}]);
