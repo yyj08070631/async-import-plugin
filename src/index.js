@@ -1,5 +1,5 @@
 const requireAll = context => context.keys().map(context)
-requireAll(require.asyncImport('./modules', true, /\.js$/, 'lazy', 'aaa')).forEach(async v => {
+requireAll(require.asyncImport('./modules', true, /\.js$/, 'lazy', '$aaa$')).forEach(async v => {
   const md = await v
   const el = document.createElement('div')
   el.innerHTML = md.default.words
